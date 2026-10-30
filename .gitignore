@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# 打包产物（pip install -e . 生成）
+*.egg-info/
+build/

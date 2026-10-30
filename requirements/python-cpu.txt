@@ -1,0 +1,13 @@
+# 第 1 层：纯 CPU 即可跑通的脚本（无需 NVIDIA GPU）
+# 代表：067 ONNX 导出对齐、023/073 结构对照、044/051/077 的纯 Python 推演
+#      074/081 的 NIfTI 几何检查与评估（只需数据，不需要显卡）
+# 注意：torch 装 CPU 版即可；若已装 CUDA 版，本层脚本同样能跑。
+numpy>=1.24
+scipy>=1.11
+matplotlib>=3.8
+nibabel>=5.0
+torch>=2.4
+torchvision>=0.19  # 022 的 CIFAR-10 数据加载
+onnx>=1.16
+onnxscript>=0.1
+onnxruntime>=1.18

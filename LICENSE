@@ -1,0 +1,30 @@
+MIT License
+
+Copyright (c) 2026 大模型训练与推理加速实战（cuda-kernels）
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+适用范围：本文件（MIT）仅覆盖仓库中的**代码与构建配置**——`examples/`、`projects/`、
+`cuda_kernels/`、`scripts/`、`tests/`、`.github/`，以及 `CMakeLists.txt`、`Makefile`、
+`pyproject.toml`、`requirements/`。
+
+文档与教程（`README.md`、`docs/`、`blog/*.md`）采用 **CC BY 4.0**；`blog/assets/` 中
+标注来源的第三方配图不适用本仓库任何许可。完整划分只有一处事实源：`docs/LICENSE.md`。

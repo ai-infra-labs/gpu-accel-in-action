@@ -1,0 +1,7 @@
+# 第 2 层：需要 NVIDIA GPU + CUDA Toolkit（强制）
+# 代表：010-reduction-prefix-sum —— PyCUDA 运行归约与前缀和
+# pycuda 编译内核依赖 nvcc，仅装 pip 包不够。
+# cupy 的包名随 CUDA 主版本变化（cupy-cuda12x / cupy-cuda11x），按机器改。
+numpy>=1.24
+pycuda>=2022.1
+cupy-cuda12x>=13.0

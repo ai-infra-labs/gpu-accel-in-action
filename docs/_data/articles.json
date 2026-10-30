@@ -1,0 +1,1751 @@
+{
+  "meta": {
+    "source": "scripts/gen_manifest.py",
+    "count": 81,
+    "note": "ingest_status 为策展字段；其余字段由仓库自动推导。"
+  },
+  "articles": [
+    {
+      "id": 1,
+      "slug": "PyCUDA全连接层前向与反向传播",
+      "title": "GPU 不认识矩阵：它怎样用 1024 个线程算完一个线性层？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/001-PyCUDA全连接层前向与反向传播.md",
+      "repo_dir": "examples/01-gpu-programming/001-fc-forward-backward",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping"
+      ],
+      "deps": [],
+      "block_count": 29,
+      "max_block": 309,
+      "code_files": [
+        "fc_forward_backward.py"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "PyCUDA全连接层反向传播实战",
+      "title": "反向传播不是魔法：用 PyCUDA 拆开全连接层的 `dX`、`dW` 与 SGD",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/002-PyCUDA全连接层反向传播实战.md",
+      "repo_dir": "examples/01-gpu-programming/002-fc-backprop-sgd",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping",
+        "coalescing"
+      ],
+      "deps": [
+        "001"
+      ],
+      "block_count": 13,
+      "max_block": 371,
+      "code_files": [
+        "fc_backprop_sgd.py"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "CPU与GPU异构计算基础",
+      "title": "GPU 明明很快，程序为什么还在等？一次讲透 CPU–GPU 协同计算",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/003-CPU与GPU异构计算基础.md",
+      "repo_dir": "examples/01-gpu-programming/003-cpu-gpu-cooperative",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "async-copy",
+        "latency-breakdown"
+      ],
+      "deps": [
+        "001",
+        "002"
+      ],
+      "block_count": 9,
+      "max_block": 352,
+      "code_files": [
+        "cpu_gpu_cooperative.py"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "PyCUDA批处理输入流水线",
+      "title": "Kernel 已经很快，GPU 为什么还在等？用 PyCUDA 搭建批量数据流水线",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/004-PyCUDA批处理输入流水线.md",
+      "repo_dir": "examples/01-gpu-programming/004-batch-input-pipeline",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "latency-breakdown",
+        "transfer"
+      ],
+      "deps": [
+        "003"
+      ],
+      "block_count": 6,
+      "max_block": 221,
+      "code_files": [
+        "batch_input_pipeline.py"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "CUDA图像水平翻转（PyCUDA实战）",
+      "title": "一个线程处理一个像素：用 PyCUDA 手写图像水平翻转",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/005-CUDA图像水平翻转（PyCUDA实战）.md",
+      "repo_dir": "examples/01-gpu-programming/005-image-hflip",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping"
+      ],
+      "deps": [
+        "001"
+      ],
+      "block_count": 12,
+      "max_block": 126,
+      "code_files": [
+        "image_hflip.py"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "CUDA图像裁剪（PyCUDA实战）",
+      "title": "裁剪不是“切一刀”：用 PyCUDA 讲透 ROI 坐标映射",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/006-CUDA图像裁剪（PyCUDA实战）.md",
+      "repo_dir": "examples/01-gpu-programming/006-image-crop-roi",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping"
+      ],
+      "deps": [
+        "005"
+      ],
+      "block_count": 13,
+      "max_block": 209,
+      "code_files": [
+        "image_crop_roi.py"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "PyCUDA二维卷积与互相关",
+      "title": "Kernel 能编译，不代表它在算卷积：拆解 PyCUDA 二维卷积的三个反转",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/007-PyCUDA二维卷积与互相关.md",
+      "repo_dir": "examples/01-gpu-programming/007-conv2d-correlation",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping"
+      ],
+      "deps": [
+        "006"
+      ],
+      "block_count": 26,
+      "max_block": 125,
+      "code_files": [
+        "conv2d_correlation.py"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "PyCUDA三维卷积实战",
+      "title": "PyCUDA 手写 3D 卷积：26 万个输出线程，为什么同一批输入被反复访问？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/008-PyCUDA三维卷积实战.md",
+      "repo_dir": "examples/01-gpu-programming/008-conv3d-pycuda",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "thread-mapping",
+        "memory-reuse"
+      ],
+      "deps": [
+        "007"
+      ],
+      "block_count": 7,
+      "max_block": 205,
+      "code_files": [
+        "conv3d_pycuda.py"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "CUDA批量中心裁剪与归一化融合实战",
+      "title": "两个 Kernel，为什么可以合成一个？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/009-CUDA批量中心裁剪与归一化融合实战.md",
+      "repo_dir": "examples/01-gpu-programming/009-fused-preprocess",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "fusion",
+        "memory-reuse"
+      ],
+      "deps": [
+        "007",
+        "008"
+      ],
+      "block_count": 11,
+      "max_block": 197,
+      "code_files": [
+        "fused_preprocess.py"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "PyCUDA归约与前缀和",
+      "title": "GPU 不只是“同时算”：为什么线程越多，归约和前缀和反而越难？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/010-PyCUDA归约与前缀和.md",
+      "repo_dir": "examples/01-gpu-programming/010-reduction-prefix-sum",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "reduction",
+        "sync"
+      ],
+      "deps": [
+        "001"
+      ],
+      "block_count": 8,
+      "max_block": 435,
+      "code_files": [
+        "reduction_scan.py",
+        "verify_reduction_scan.py"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "PyCUDA分块矩阵乘法与共享内存",
+      "title": "从局部乘加到共享内存复用：用 PyCUDA 拆开 GPU 矩阵乘法",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/011-PyCUDA分块矩阵乘法与共享内存.md",
+      "repo_dir": "examples/01-gpu-programming/011-tiled-matmul-shared-memory",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "shared-memory",
+        "sync"
+      ],
+      "deps": [
+        "010"
+      ],
+      "block_count": 12,
+      "max_block": 302,
+      "code_files": [
+        "tiled_matmul.py",
+        "validate_tiled_index.py"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "cuBLAS-SGEMM参数解析",
+      "title": "一行 `SGEMM`，为什么藏着三套矩阵世界？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/012-cuBLAS-SGEMM参数解析.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 4,
+      "max_block": 42,
+      "code_files": []
+    },
+    {
+      "id": 13,
+      "slug": "PyCUDA内存传输与矩阵乘法",
+      "title": "GPU 算得快，数据怎么搬也很关键：用 PyCUDA 拆解矩阵乘法的内存流（附完整代码）",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/013-PyCUDA内存传输与矩阵乘法.md",
+      "repo_dir": "examples/01-gpu-programming/013-memory-transfer-matmul",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "transfer",
+        "latency-breakdown"
+      ],
+      "deps": [
+        "003"
+      ],
+      "block_count": 6,
+      "max_block": 208,
+      "code_files": [
+        "pycuda_memory_transfer_matmul.py"
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "CUDA双调排序",
+      "title": "1024 个数，为什么这份朴素 CUDA 实现要启动 55 次 Kernel？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/014-CUDA双调排序.md",
+      "repo_dir": "examples/01-gpu-programming/014-bitonic-sort",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "launch-overhead",
+        "sync"
+      ],
+      "deps": [
+        "010"
+      ],
+      "block_count": 12,
+      "max_block": 249,
+      "code_files": [
+        "bitonic_sort.py"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "GPU朴素DFT与傅里叶变换入门",
+      "title": "把声音拆成频率，究竟发生了什么？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/015-GPU朴素DFT与傅里叶变换入门.md",
+      "repo_dir": "examples/01-gpu-programming/015-naive-dft",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "shared-memory"
+      ],
+      "deps": [
+        "010"
+      ],
+      "block_count": 9,
+      "max_block": 304,
+      "code_files": [
+        "naive_dft.py"
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "FFT卷积加速原理与实战",
+      "title": "FFT 卷积：不再让卷积核一格一格滑，真的会更快吗？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/016-FFT卷积加速原理与实战.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 12,
+      "max_block": 44,
+      "code_files": []
+    },
+    {
+      "id": 17,
+      "slug": "PyCUDA N体模拟",
+      "title": "1024 个 CUDA 线程一起模拟引力，为什么算出的\"宇宙\"可能是错的？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/017-PyCUDA N体模拟.md",
+      "repo_dir": "examples/01-gpu-programming/017-nbody",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "data-race",
+        "thread-mapping"
+      ],
+      "deps": [
+        "001",
+        "010"
+      ],
+      "block_count": 6,
+      "max_block": 245,
+      "code_files": [
+        "nbody.py"
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "PyCUDA热传导方程数值模拟",
+      "title": "GPU 算了 1000 次，温度为什么只前进了一步？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/018-PyCUDA热传导方程数值模拟.md",
+      "repo_dir": "examples/01-gpu-programming/018-heat-equation",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "sync",
+        "stability"
+      ],
+      "deps": [
+        "017"
+      ],
+      "block_count": 11,
+      "max_block": 233,
+      "code_files": [
+        "heat_equation.py"
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "PyCUDA流体格子模拟",
+      "title": "26 万个 CUDA 线程，如何推动一滴墨水？",
+      "chapter": 1,
+      "chapter_name": "GPU 编程基础",
+      "chapter_dir": "01-gpu-programming",
+      "blog_path": "blog/019-PyCUDA流体格子模拟.md",
+      "repo_dir": "examples/01-gpu-programming/019-fluid-grid",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "sync",
+        "boundary"
+      ],
+      "deps": [
+        "018"
+      ],
+      "block_count": 18,
+      "max_block": 261,
+      "code_files": [
+        "fluid_cpu_ref.py",
+        "fluid_grid.py"
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "模型压缩技术全景",
+      "title": "模型压缩全景图：参数少了、FLOPs 降了，为什么模型不一定跑得更快？",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/020-模型压缩技术全景.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 0,
+      "max_block": 0,
+      "code_files": []
+    },
+    {
+      "id": 21,
+      "slug": "模型缩小四倍推理也会快四倍吗",
+      "title": "模型缩小近 4 倍，推理也会快 4 倍吗？",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/021-模型缩小四倍推理也会快四倍吗.md",
+      "repo_dir": "examples/02-model-compression/021-uint8-weight-quant",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "weight-quant",
+        "dsl-numba"
+      ],
+      "deps": [
+        "020"
+      ],
+      "block_count": 2,
+      "max_block": 349,
+      "code_files": [
+        "uint8_weight_quant_demo.py"
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "知识蒸馏：从CNN到大模型的思路与实践",
+      "title": "Loss 在下降，学生却没学到老师？一篇讲透知识蒸馏",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/022-知识蒸馏：从CNN到大模型的思路与实践.md",
+      "repo_dir": "examples/02-model-compression/022-cifar10-distillation",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "distillation"
+      ],
+      "deps": [
+        "020",
+        "021"
+      ],
+      "block_count": 11,
+      "max_block": 355,
+      "code_files": [
+        "distill_cifar10.py"
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "小模型蒸馏：GAP与知识蒸馏实战",
+      "title": "参数缩到原来的 1/106，计算量却只少了 27%：小模型到底小在哪？",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/023-小模型蒸馏：GAP与知识蒸馏实战.md",
+      "repo_dir": "examples/02-model-compression/023-gap-vs-fc-distillation",
+      "ingest_status": "已入库（已实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "params-vs-flops"
+      ],
+      "deps": [],
+      "block_count": 6,
+      "max_block": 92,
+      "code_files": [
+        "inspect_student_heads.py"
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "CNN剪枝与CSR表示",
+      "title": "权重剪掉一半，模型就能快一倍？用 CUDA 算一笔账",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/024-CNN剪枝与CSR表示.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 17,
+      "max_block": 14,
+      "code_files": []
+    },
+    {
+      "id": 25,
+      "slug": "CUDA稀疏矩阵乘法（CSR-SpMM）",
+      "title": "别再搬运那些零：从 CSR 到 CUDA SpMM，拆开稀疏矩阵乘法",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/025-CUDA稀疏矩阵乘法（CSR-SpMM）.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 11,
+      "max_block": 27,
+      "code_files": []
+    },
+    {
+      "id": 26,
+      "slug": "CUDA稀疏矩阵向量乘法（CSR-SpMV）指南",
+      "title": "99.99% 都是零：40 GB 的矩阵，如何用 8.4 MB 存下？从 CSR 到 CUDA，讲透稀疏矩阵存储与计算",
+      "chapter": 2,
+      "chapter_name": "模型压缩",
+      "chapter_dir": "02-model-compression",
+      "blog_path": "blog/026-CUDA稀疏矩阵向量乘法（CSR-SpMV）指南.md",
+      "repo_dir": "examples/02-model-compression/026-csr-spmv",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "csr-sparse"
+      ],
+      "deps": [
+        "025"
+      ],
+      "block_count": 18,
+      "max_block": 186,
+      "code_files": [
+        "csr_spmv_corrected.py"
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "模型训练完了，为什么上线推理还是很慢",
+      "title": "模型训练完了，为什么上线推理还是很慢？",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/027-模型训练完了，为什么上线推理还是很慢.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 5,
+      "code_files": []
+    },
+    {
+      "id": 28,
+      "slug": "TensorRT推理加速实战（上）",
+      "title": "PyTorch→ONNX→TensorRT：一条推理链路的验证清单（附完整对照代码）",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/028-TensorRT推理加速实战（上）.md",
+      "repo_dir": "examples/03-inference-serving/028-trt-benchmark",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "tensorrt-build",
+        "latency-breakdown"
+      ],
+      "deps": [
+        "027"
+      ],
+      "block_count": 5,
+      "max_block": 246,
+      "code_files": [
+        "trt_mlp_benchmark.py"
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "TensorRT推理加速实战（下）",
+      "title": "模型上了 GPU，一次请求的时间都花在哪？一次 TensorRT 对照实验",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/029-TensorRT推理加速实战（下）.md",
+      "repo_dir": "examples/03-inference-serving/029-trt-pipeline",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "tensorrt-build",
+        "latency-breakdown"
+      ],
+      "deps": [
+        "028"
+      ],
+      "block_count": 7,
+      "max_block": 267,
+      "code_files": [
+        "trt_build_and_run.py"
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "多模型并行推理（一）：概览",
+      "title": "三个 AI 模型一起跑，为什么可能比一个一个跑还慢？",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/030-多模型并行推理（一）：概览.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 37,
+      "code_files": []
+    },
+    {
+      "id": 31,
+      "slug": "多模型并行推理（二）：CUDA Streams并发",
+      "title": "开了 4 条 CUDA 流，GPU 就能同时推理 4 批图片吗？",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/031-多模型并行推理（二）：CUDA Streams并发.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 8,
+      "max_block": 27,
+      "code_files": []
+    },
+    {
+      "id": 32,
+      "slug": "多模型并行推理（三）：多GPU任务调度",
+      "title": "10 个推理任务、4 张 GPU：换种排法，整批耗时为何能少 27%？（模拟实验）",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/032-多模型并行推理（三）：多GPU任务调度.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 7,
+      "max_block": 38,
+      "code_files": []
+    },
+    {
+      "id": 33,
+      "slug": "多模型并行推理（四）：GPU数据流水线",
+      "title": "GPU 明明算得很快，为什么还在等数据？——用 CUDA Streams 搭一条推理流水线",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/033-多模型并行推理（四）：GPU数据流水线.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 6,
+      "max_block": 11,
+      "code_files": []
+    },
+    {
+      "id": 34,
+      "slug": "多模型并行推理（五）：Triton推理服务工程化",
+      "title": "一张 GPU 同时跑三个 AI 模型，为什么请求反而越来越慢？——从 CUDA Streams 到 Triton 推理服务",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/034-多模型并行推理（五）：Triton推理服务工程化.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 4,
+      "max_block": 46,
+      "code_files": []
+    },
+    {
+      "id": 35,
+      "slug": "多模型并行推理（六）：副本并发、张量并行与流水线并行",
+      "title": "4 张 GPU 推理一个模型：复制四份，还是把模型拆开？",
+      "chapter": 3,
+      "chapter_name": "推理服务与部署",
+      "chapter_dir": "03-inference-serving",
+      "blog_path": "blog/035-多模型并行推理（六）：副本并发、张量并行与流水线并行.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 27,
+      "code_files": []
+    },
+    {
+      "id": 36,
+      "slug": "端侧推理加速（一）：为什么要端侧推理",
+      "title": "摄像头认出人只要几十毫秒，为什么提醒却晚了两秒？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/036-端侧推理加速（一）：为什么要端侧推理.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 0,
+      "max_block": 0,
+      "code_files": []
+    },
+    {
+      "id": 37,
+      "slug": "端侧推理加速（二）：模型缩小与延迟瓶颈",
+      "title": "模型从 40 MB 缩到 10 MB，摄像头为什么还是卡？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/037-端侧推理加速（二）：模型缩小与延迟瓶颈.md",
+      "repo_dir": null,
+      "ingest_status": "待评估",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 0,
+      "max_block": 0,
+      "code_files": []
+    },
+    {
+      "id": 38,
+      "slug": "端侧推理加速（三）：INT8量化能不能省四倍时延",
+      "title": "把模型里的数字缩小四倍，摄像头就能快四倍吗？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/038-端侧推理加速（三）：INT8量化能不能省四倍时延.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 21,
+      "code_files": []
+    },
+    {
+      "id": 39,
+      "slug": "端侧推理加速（四）：CPU、GPU、NPU谁来跑",
+      "title": "手机明明有 NPU，为什么 AI 还在 CPU 上跑？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/039-端侧推理加速（四）：CPU、GPU、NPU谁来跑.md",
+      "repo_dir": "examples/04-edge-inference/039-on-device-npu",
+      "ingest_status": "已入库（无独立代码）",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [
+        "038"
+      ],
+      "block_count": 1,
+      "max_block": 12,
+      "code_files": []
+    },
+    {
+      "id": 40,
+      "slug": "端侧推理加速_第五篇_三个模型都很快摄像头为什么仍然迟到",
+      "title": "三个模型都很快，摄像头为什么还在看两秒前的画面？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/040-端侧推理加速_第五篇_三个模型都很快摄像头为什么仍然迟到.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 29,
+      "code_files": []
+    },
+    {
+      "id": 41,
+      "slug": "四个AI一起干活为什么不能快四倍",
+      "title": "四个 AI 一起干活，为什么不能快四倍？",
+      "chapter": 4,
+      "chapter_name": "端侧推理",
+      "chapter_dir": "04-edge-inference",
+      "blog_path": "blog/041-四个AI一起干活为什么不能快四倍.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 3,
+      "max_block": 50,
+      "code_files": []
+    },
+    {
+      "id": 42,
+      "slug": "开了四个线程GPU就会同时跑吗",
+      "title": "开了四个线程，GPU 就会同时跑吗？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/042-开了四个线程GPU就会同时跑吗.md",
+      "repo_dir": "examples/05-parallel-distributed/042-cuda-streams-concurrency",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "async-copy"
+      ],
+      "deps": [
+        "003"
+      ],
+      "block_count": 9,
+      "max_block": 100,
+      "code_files": [
+        "streams_demo.py"
+      ]
+    },
+    {
+      "id": 43,
+      "slug": "模型都放进显存了为什么反而更慢",
+      "title": "模型都放进显存了，为什么反而更慢？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/043-模型都放进显存了为什么反而更慢.md",
+      "repo_dir": "examples/05-parallel-distributed/043-vram-contention",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "memory-accounting",
+        "occupancy"
+      ],
+      "deps": [
+        "042"
+      ],
+      "block_count": 1,
+      "max_block": 94,
+      "code_files": [
+        "contention_demo.py"
+      ]
+    },
+    {
+      "id": 44,
+      "slug": "多加一张显卡任务该交给谁",
+      "title": "多加一张显卡，任务该交给谁？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/044-多加一张显卡任务该交给谁.md",
+      "repo_dir": "examples/05-parallel-distributed/044-gpu-task-dispatch",
+      "ingest_status": "已入库（已实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "scheduling"
+      ],
+      "deps": [
+        "043"
+      ],
+      "block_count": 2,
+      "max_block": 65,
+      "code_files": [
+        "gpu_task_dispatch.py"
+      ]
+    },
+    {
+      "id": 45,
+      "slug": "请求一多AI为什么开始排长队",
+      "title": "请求一多，AI 为什么开始排长队？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/045-请求一多AI为什么开始排长队.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 53,
+      "code_files": []
+    },
+    {
+      "id": 46,
+      "slug": "两张显卡各算一半数据为什么还要对答案",
+      "title": "两张显卡各算一半数据，为什么还要对答案？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/046-两张显卡各算一半数据为什么还要对答案.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 4,
+      "max_block": 58,
+      "code_files": []
+    },
+    {
+      "id": 47,
+      "slug": "GPU各算各的结果怎么对齐讲透NCCL",
+      "title": "GPU 各算各的，结果怎么对齐？讲透 NCCL 通信",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/047-GPU各算各的结果怎么对齐讲透NCCL.md",
+      "repo_dir": "examples/05-parallel-distributed/047-nccl-allreduce",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "nccl"
+      ],
+      "deps": [
+        "046"
+      ],
+      "block_count": 2,
+      "max_block": 66,
+      "code_files": [
+        "nccl_allreduce_torchrun.py"
+      ]
+    },
+    {
+      "id": 48,
+      "slug": "一层矩阵太大怎样让多张GPU合力算",
+      "title": "一层矩阵太大，怎样让多张 GPU 合力算？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/048-一层矩阵太大怎样让多张GPU合力算.md",
+      "repo_dir": "examples/05-parallel-distributed/048-tensor-parallel-linear",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "tp-parallel",
+        "nccl"
+      ],
+      "deps": [
+        "047"
+      ],
+      "block_count": 3,
+      "max_block": 68,
+      "code_files": [
+        "tp_linear_demo.py",
+        "tp_split_check.py"
+      ]
+    },
+    {
+      "id": 49,
+      "slug": "模型分成几段为什么显卡还会等着没活干",
+      "title": "模型分成几段，为什么显卡还会等着没活干？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/049-模型分成几段为什么显卡还会等着没活干.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 1,
+      "max_block": 44,
+      "code_files": []
+    },
+    {
+      "id": 50,
+      "slug": "模型训练爆显存：参数之外还占了多少",
+      "title": "模型参数没多大，训练为什么还是爆显存？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/050-模型训练爆显存：参数之外还占了多少.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 2,
+      "max_block": 57,
+      "code_files": []
+    },
+    {
+      "id": 51,
+      "slug": "并行训练（三大范式）：数据、张量、流水线并行",
+      "title": "八张显卡，怎样同时分数据、分层、分矩阵？",
+      "chapter": 5,
+      "chapter_name": "并行与分布式",
+      "chapter_dir": "05-parallel-distributed",
+      "blog_path": "blog/051-并行训练（三大范式）：数据、张量、流水线并行.md",
+      "repo_dir": "examples/05-parallel-distributed/051-parallel-group-check",
+      "ingest_status": "已入库（已实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "distributed-3d"
+      ],
+      "deps": [
+        "048",
+        "049",
+        "050"
+      ],
+      "block_count": 1,
+      "max_block": 92,
+      "code_files": [
+        "parallel_groups_check.py"
+      ]
+    },
+    {
+      "id": 52,
+      "slug": "为什么要自定义CUDA算子",
+      "title": "PyTorch 已经会用 GPU，为什么还要自定义算子？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/052-为什么要自定义CUDA算子.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 4,
+      "max_block": 46,
+      "code_files": []
+    },
+    {
+      "id": 53,
+      "slug": "从Python到CUDA：自定义算子入门",
+      "title": "一行平方运算，怎样变成 GPU 上的自定义算子？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/053-从Python到CUDA：自定义算子入门.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 7,
+      "max_block": 34,
+      "code_files": []
+    },
+    {
+      "id": 54,
+      "slug": "CUDA算子接入PyTorch实战",
+      "title": "CUDA 代码跑通了，为什么还没真正接入 PyTorch？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/054-CUDA算子接入PyTorch实战.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 13,
+      "max_block": 44,
+      "code_files": []
+    },
+    {
+      "id": 55,
+      "slug": "自定义算子正确性与梯度验证",
+      "title": "自定义算子算对了，模型为什么还是学不会？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/055-自定义算子正确性与梯度验证.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 11,
+      "max_block": 29,
+      "code_files": []
+    },
+    {
+      "id": 56,
+      "slug": "手写CUDA vs PyTorch vs cuBLAS性能对比",
+      "title": "手写 CUDA 一定更快吗？三种实现同场比较",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/056-手写CUDA vs PyTorch vs cuBLAS性能对比.md",
+      "repo_dir": "examples/06-custom-operators/056-custom-op-vs-eager",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "fusion",
+        "dsl-torch",
+        "launch-overhead"
+      ],
+      "deps": [
+        "053",
+        "055"
+      ],
+      "block_count": 9,
+      "max_block": 62,
+      "code_files": [
+        "affine.py",
+        "affine_kernel.cu",
+        "affine_op.cpp",
+        "bench_three_ways.py"
+      ]
+    },
+    {
+      "id": 57,
+      "slug": "CUDA算子编译常见错误排查",
+      "title": "单独运行没问题，为什么一开编译就出错？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/057-CUDA算子编译常见错误排查.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 13,
+      "max_block": 34,
+      "code_files": []
+    },
+    {
+      "id": 58,
+      "slug": "CUDA算子接入TensorFlow思路",
+      "title": "同一段 CUDA，怎样接入 TensorFlow？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/058-CUDA算子接入TensorFlow思路.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 13,
+      "max_block": 39,
+      "code_files": []
+    },
+    {
+      "id": 59,
+      "slug": "Triton vs 手写CUDA自定义算子选型",
+      "title": "有了 Triton，自定义算子还要写 C++ 吗？",
+      "chapter": 6,
+      "chapter_name": "自定义算子",
+      "chapter_dir": "06-custom-operators",
+      "blog_path": "blog/059-Triton vs 手写CUDA自定义算子选型.md",
+      "repo_dir": null,
+      "ingest_status": "待拼装",
+      "verify_status": null,
+      "mechanisms": [],
+      "deps": [],
+      "block_count": 16,
+      "max_block": 42,
+      "code_files": []
+    },
+    {
+      "id": 60,
+      "slug": "显存占用分析：别只盯参数量",
+      "title": "删了张量，显存为什么还没降？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/060-显存占用分析：别只盯参数量.md",
+      "repo_dir": "examples/07-memory-and-transfer/060-tensor-memory-ledger",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "memory-accounting"
+      ],
+      "deps": [
+        "043"
+      ],
+      "block_count": 7,
+      "max_block": 88,
+      "code_files": [
+        "memory_ledger.py"
+      ]
+    },
+    {
+      "id": 61,
+      "slug": "显存带宽与访存模式对性能的影响",
+      "title": "同样搬一张表，GPU 为什么还要看访问方式？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/061-显存带宽与访存模式对性能的影响.md",
+      "repo_dir": "examples/07-memory-and-transfer/061-coalescing-lab",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "coalescing"
+      ],
+      "deps": [
+        "060"
+      ],
+      "block_count": 4,
+      "max_block": 114,
+      "code_files": [
+        "coalescing_lab.py"
+      ]
+    },
+    {
+      "id": 62,
+      "slug": "共享内存限制与bank冲突",
+      "title": "共享内存这么快，为什么不能全放进去？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/062-共享内存限制与bank冲突.md",
+      "repo_dir": "examples/07-memory-and-transfer/062-shared-memory-limit",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "shared-memory",
+        "occupancy"
+      ],
+      "deps": [
+        "011",
+        "061"
+      ],
+      "block_count": 4,
+      "max_block": 68,
+      "code_files": [
+        "matmul_shared_limit.py"
+      ]
+    },
+    {
+      "id": 63,
+      "slug": "Warp级广播与Shuffle原语",
+      "title": "一组线程读同一个数，GPU 有什么捷径？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/063-Warp级广播与Shuffle原语.md",
+      "repo_dir": "examples/07-memory-and-transfer/063-warp-broadcast",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "constant-memory",
+        "coalescing"
+      ],
+      "deps": [
+        "061",
+        "062"
+      ],
+      "block_count": 3,
+      "max_block": 103,
+      "code_files": [
+        "warp_broadcast_lab.py"
+      ]
+    },
+    {
+      "id": 64,
+      "slug": "异步传输与CUDA Stream重叠",
+      "title": "数据还没送到，GPU 已经等急了",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/064-异步传输与CUDA Stream重叠.md",
+      "repo_dir": "examples/07-memory-and-transfer/064-host-to-device-wait",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "pinned-memory",
+        "transfer"
+      ],
+      "deps": [
+        "061"
+      ],
+      "block_count": 4,
+      "max_block": 92,
+      "code_files": [
+        "host_to_device_lab.py"
+      ]
+    },
+    {
+      "id": 65,
+      "slug": "打开异步传输为什么还是没变快",
+      "title": "打开异步传输，为什么还是没变快？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/065-打开异步传输为什么还是没变快.md",
+      "repo_dir": "examples/07-memory-and-transfer/065-async-transfer-overlap",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "async-copy"
+      ],
+      "deps": [
+        "042",
+        "064"
+      ],
+      "block_count": 3,
+      "max_block": 127,
+      "code_files": [
+        "overlap_lab.py"
+      ]
+    },
+    {
+      "id": 66,
+      "slug": "两张GPU传数据真的走了NVLink吗",
+      "title": "两张 GPU 传数据，真的走了 NVLink 吗？",
+      "chapter": 7,
+      "chapter_name": "访存与传输",
+      "chapter_dir": "07-memory-and-transfer",
+      "blog_path": "blog/066-两张GPU传数据真的走了NVLink吗.md",
+      "repo_dir": "examples/07-memory-and-transfer/066-nvlink-copy",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "p2p-copy",
+        "transfer"
+      ],
+      "deps": [
+        "064",
+        "065"
+      ],
+      "block_count": 3,
+      "max_block": 101,
+      "code_files": [
+        "nvlink_copy_bench.py"
+      ]
+    },
+    {
+      "id": 67,
+      "slug": "TensorRT推理加速入门：模型导出成功为什么结果却变了",
+      "title": "模型导出成功，为什么结果却变了？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/067-TensorRT推理加速入门：模型导出成功为什么结果却变了.md",
+      "repo_dir": "examples/08-tensorrt-deploy/067-onnx-export-alignment",
+      "ingest_status": "已入库（已实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "onnx-export"
+      ],
+      "deps": [
+        "027"
+      ],
+      "block_count": 1,
+      "max_block": 126,
+      "code_files": [
+        "export_and_check.py"
+      ]
+    },
+    {
+      "id": 68,
+      "slug": "TensorRT没改模型为什么还能更快",
+      "title": "TensorRT 没改模型，为什么还能更快？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/068-TensorRT没改模型为什么还能更快.md",
+      "repo_dir": "examples/08-tensorrt-deploy/068-engine-build",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "tensorrt-build",
+        "fusion"
+      ],
+      "deps": [
+        "067"
+      ],
+      "block_count": 1,
+      "max_block": 69,
+      "code_files": [
+        "build_engine_and_report.py"
+      ]
+    },
+    {
+      "id": 69,
+      "slug": "引擎已经生成为什么推理还会报错",
+      "title": "引擎已经生成，为什么推理还会报错？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/069-引擎已经生成为什么推理还会报错.md",
+      "repo_dir": "examples/08-tensorrt-deploy/069-engine-runtime",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "tensorrt-runtime"
+      ],
+      "deps": [
+        "068"
+      ],
+      "block_count": 3,
+      "max_block": 129,
+      "code_files": [
+        "run_engine.py"
+      ]
+    },
+    {
+      "id": 70,
+      "slug": "推理只要1毫秒应用为什么还在等",
+      "title": "推理只要 1 毫秒，应用为什么还在等？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/070-推理只要1毫秒应用为什么还在等.md",
+      "repo_dir": "examples/08-tensorrt-deploy/070-app-latency",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "latency-breakdown",
+        "tensorrt-runtime"
+      ],
+      "deps": [
+        "069"
+      ],
+      "block_count": 2,
+      "max_block": 123,
+      "code_files": [
+        "app_latency_bench.py"
+      ]
+    },
+    {
+      "id": 71,
+      "slug": "模型变成INT8精度到底丢在哪里",
+      "title": "模型变成 INT8，精度到底丢在哪里？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/071-模型变成INT8精度到底丢在哪里.md",
+      "repo_dir": "examples/08-tensorrt-deploy/071-int8-quant",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "int8-quant"
+      ],
+      "deps": [
+        "067"
+      ],
+      "block_count": 3,
+      "max_block": 64,
+      "code_files": [
+        "int8_quantize_with_modelopt.py"
+      ]
+    },
+    {
+      "id": 72,
+      "slug": "给权重做剪枝CUDA到底加速了哪一步",
+      "title": "给权重做剪枝，CUDA 到底加速了哪一步？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/072-给权重做剪枝CUDA到底加速了哪一步.md",
+      "repo_dir": "examples/08-tensorrt-deploy/072-pruning-kernel",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "pruning",
+        "transfer"
+      ],
+      "deps": [
+        "060",
+        "071"
+      ],
+      "block_count": 5,
+      "max_block": 115,
+      "code_files": [
+        "threshold_prune_demo.py",
+        "torch_prune_roundtrip_demo.py"
+      ]
+    },
+    {
+      "id": 73,
+      "slug": "权重删了一半模型为什么没快",
+      "title": "权重删了一半，模型为什么没快？",
+      "chapter": 8,
+      "chapter_name": "TensorRT 部署",
+      "chapter_dir": "08-tensorrt-deploy",
+      "blog_path": "blog/073-权重删了一半模型为什么没快.md",
+      "repo_dir": "examples/08-tensorrt-deploy/073-pruning-no-speedup",
+      "ingest_status": "已入库（已实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "pruning",
+        "params-vs-flops"
+      ],
+      "deps": [
+        "072"
+      ],
+      "block_count": 3,
+      "max_block": 93,
+      "code_files": [
+        "compact_model.py"
+      ]
+    },
+    {
+      "id": 74,
+      "slug": "CT看着是一叠图：GPU要处理的究竟是什么",
+      "title": "CT 看着是一叠图，GPU 要处理的究竟是什么？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/074-CT看着是一叠图：GPU要处理的究竟是什么.md",
+      "repo_dir": "examples/09-medical-imaging/074-ct-volume-basics",
+      "ingest_status": "已入库（已实测·合成数据）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "nifti-geometry"
+      ],
+      "deps": [],
+      "block_count": 3,
+      "max_block": 104,
+      "code_files": [
+        "check_nifti_pair.py"
+      ]
+    },
+    {
+      "id": 75,
+      "slug": "AI怎样在CT里勾出一个器官",
+      "title": "AI 怎样在 CT 里勾出一个器官？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/075-AI怎样在CT里勾出一个器官.md",
+      "repo_dir": "examples/09-medical-imaging/075-ct-seg-inference",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "inference-pipeline",
+        "dice-metric"
+      ],
+      "deps": [
+        "074"
+      ],
+      "block_count": 5,
+      "max_block": 76,
+      "code_files": [
+        "eval_spleen_output.py",
+        "run_spleen_bundle.py"
+      ]
+    },
+    {
+      "id": 76,
+      "slug": "CT预处理只有三行为什么还要写CUDA",
+      "title": "CT 预处理只有三行，为什么还要写 CUDA？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/076-CT预处理只有三行为什么还要写CUDA.md",
+      "repo_dir": "examples/09-medical-imaging/076-ct-intensity-map",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "fusion",
+        "transfer",
+        "dsl-cupy"
+      ],
+      "deps": [
+        "074"
+      ],
+      "block_count": 2,
+      "max_block": 163,
+      "code_files": [
+        "intensity_map_cupy.py"
+      ]
+    },
+    {
+      "id": 77,
+      "slug": "CT放不进显存切成小块后怎样拼回去",
+      "title": "CT 放不进显存，切成小块后怎样拼回去？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/077-CT放不进显存切成小块后怎样拼回去.md",
+      "repo_dir": "examples/09-medical-imaging/077-sliding-window-toy",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "sliding-window"
+      ],
+      "deps": [
+        "075"
+      ],
+      "block_count": 2,
+      "max_block": 125,
+      "code_files": [
+        "monai_window_check.py",
+        "sliding_window_toy.py"
+      ]
+    },
+    {
+      "id": 78,
+      "slug": "器官已经标出来了AI还要学什么",
+      "title": "器官已经标出来了，AI 还要学什么？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/078-器官已经标出来了AI还要学什么.md",
+      "repo_dir": "examples/09-medical-imaging/078-ct-one-step-train",
+      "ingest_status": "已入库（已实测·合成数据）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "training-step",
+        "dice-metric"
+      ],
+      "deps": [
+        "075",
+        "077"
+      ],
+      "block_count": 2,
+      "max_block": 126,
+      "code_files": [
+        "one_step_train.py"
+      ]
+    },
+    {
+      "id": 79,
+      "slug": "CT分割想跑得更快能少用一些精度吗",
+      "title": "CT 分割想跑得更快，能少用一些精度吗？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/079-CT分割想跑得更快能少用一些精度吗.md",
+      "repo_dir": "examples/09-medical-imaging/079-ct-amp-check",
+      "ingest_status": "已入库（部分实测）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "amp"
+      ],
+      "deps": [
+        "078"
+      ],
+      "block_count": 4,
+      "max_block": 173,
+      "code_files": [
+        "amp_probe.py",
+        "fp16_numpy_check.py"
+      ]
+    },
+    {
+      "id": 80,
+      "slug": "CT分割已经用上GPU为什么还在等数据",
+      "title": "CT 分割已经用上 GPU，为什么还在等数据？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/080-CT分割已经用上GPU为什么还在等数据.md",
+      "repo_dir": "examples/09-medical-imaging/080-ct-double-buffer",
+      "ingest_status": "已入库",
+      "verify_status": "未实测",
+      "mechanisms": [
+        "async-copy",
+        "pinned-memory"
+      ],
+      "deps": [
+        "077",
+        "078"
+      ],
+      "block_count": 3,
+      "max_block": 141,
+      "code_files": [
+        "double_buffer_infer.py"
+      ]
+    },
+    {
+      "id": 81,
+      "slug": "CT分割跑完了怎样判断它做得好不好",
+      "title": "CUDA 医疗影像实战（8）：CT分割跑完了，怎样判断它做得好不好？",
+      "chapter": 9,
+      "chapter_name": "医疗影像实战",
+      "chapter_dir": "09-medical-imaging",
+      "blog_path": "blog/081-CT分割跑完了怎样判断它做得好不好.md",
+      "repo_dir": "examples/09-medical-imaging/081-ct-seg-eval",
+      "ingest_status": "已入库（已实测·合成数据）",
+      "verify_status": "已实测",
+      "mechanisms": [
+        "dice-metric"
+      ],
+      "deps": [
+        "075"
+      ],
+      "block_count": 1,
+      "max_block": 151,
+      "code_files": [
+        "evaluate_ct_masks.py"
+      ]
+    }
+  ]
+}

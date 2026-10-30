@@ -1,0 +1,25 @@
+[project]
+name = "gpu-accel-in-action"
+version = "1.0.0"
+description = "《大模型训练与推理加速实战》：81 篇 GPU/AI 加速长文与九章配套示例"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "代码 MIT；文档 CC BY 4.0（见 LICENSE 与 docs/LICENSE.md）" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+# 发行名（gpu-accel-in-action）与导入名（cuda_kernels）不同，这是刻意的：
+# 仓库承载教程与示例，发行名跟着仓库走；导入名描述它实际干的事——加载 CUDA 源码。
+# 包只提供「加载与运行」能力，源码仍在 examples/ 里（见 docs/reference/package.md）。
+# 因此这里只打包 cuda_kernels 自身，不把 81 篇的脚本收进 wheel。
+[tool.setuptools]
+packages = ["cuda_kernels", "cuda_kernels.ops"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

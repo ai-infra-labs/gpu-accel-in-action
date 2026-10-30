@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "note": "三种代码来源，各按各的标准验收：\n1. 逐字抽取：文件 md5 命中某个博文代码块（不需要在此登记）；\n2. 拼接：一篇的代码被拆成多块讲解，按顺序拼成完整文件，登记在 files；\n3. 独立项目：自带构建与运行入口的完整工程，不以「是否发表过文章」作为合格标准，登记在 standalone。\n前两种由博文保证内容可信，第三种由它自己的构建与测试保证。拼接规则见 scripts/build_from_blocks.py：各块去首尾空行、空行相连、末尾补一个换行。",
+  "files": {
+    "examples/06-custom-operators/056-custom-op-vs-eager/affine_kernel.cu": {
+      "article": "056-手写CUDA vs PyTorch vs cuBLAS性能对比.md",
+      "blocks": [
+        5,
+        6
+      ],
+      "why": "块 5 是 CUDA 头文件与 kernel，块 6 是启动函数；单块都缺一半，拼起来才是完整 .cu"
+    },
+    "examples/06-custom-operators/056-custom-op-vs-eager/bench_three_ways.py": {
+      "article": "056-手写CUDA vs PyTorch vs cuBLAS性能对比.md",
+      "blocks": [
+        8,
+        9,
+        10
+      ],
+      "why": "块 8 是计时与核对辅助函数、块 9 是 profiler、块 10 是 main；main 依赖前两块"
+    },
+    "examples/07-memory-and-transfer/062-shared-memory-limit/matmul_shared_limit.py": {
+      "article": "062-共享内存限制与bank冲突.md",
+      "blocks": [
+        3,
+        4
+      ],
+      "why": "块 3 是 import 与两个 kernel，块 4 是计时与 main，只讲其中一块会缺符号"
+    },
+    "examples/07-memory-and-transfer/063-warp-broadcast/warp_broadcast_lab.py": {
+      "article": "063-Warp级广播与Shuffle原语.md",
+      "blocks": [
+        0,
+        2
+      ],
+      "why": "块 0 是 import、常量与两个 kernel，块 2 是查表 kernel 与 main"
+    }
+  },
+  "standalone": [
+    {
+      "paths": [
+        "projects/ct-reconstruction/"
+      ],
+      "kind": "完整项目",
+      "why": "一条完整的 CT 重建工程线（滤波 → 反投影）：ops/ 是单文件教学单元，src|include|apps/ 是 CMake 工程。它不属于 81 篇体系，也不等某篇博文才成立——按自己的构建与运行结果验收，而不是按「能不能对上博文代码块」验收。",
+      "built_by": "projects/ct-reconstruction/CMakeLists.txt",
+      "verified_by": "projects/ct-reconstruction/docs/expected_output.md"
+    }
+  ]
+}

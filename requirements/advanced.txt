@@ -1,0 +1,24 @@
+# 第 3 层：需要特殊环境或额外系统组件，默认不在 CI 中执行
+# 本层自足：不依赖其它 requirements 文件。
+# - numba / numba-cuda：新版把 CUDA 后端拆成独立包，两个都要装
+# - tensorrt：需 NVIDIA TensorRT 运行时（版本与驱动强绑定）
+# - triton   ：需配套 CUDA 版本
+# - mpi4py   ：分布式篇用于模拟进程间通信
+# - nvidia-modelopt：071 的 INT8 量化（import modelopt）
+# 本层的脚本会同时用到下面这些：021 要 torch+torchvision+numba，
+# 028/029/069/070 要 torch+onnx+onnxruntime+pycuda，缺一个都跑不起来，
+# 所以这一层实际是"前两层 + 特殊组件"的合集，不是叠加安装。
+numpy>=1.24
+scipy>=1.11
+numba>=0.60
+numba-cuda>=0.1
+tensorrt>=10.0
+triton>=3.0
+mpi4py>=3.1
+monai>=1.3
+torch>=2.4
+torchvision>=0.19
+onnx>=1.16
+onnxruntime>=1.18
+pycuda>=2022.1
+nvidia-modelopt>=0.19
